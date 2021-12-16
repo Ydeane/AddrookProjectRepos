@@ -1,0 +1,49 @@
+########## 开发环境
+###### 配置项目启动端口号
+server:
+  port: 8888
+spring:
+  ###### 配置项目应用名
+  application:
+    name: userRedis
+  ###### 开启 Spring Boot Bean id Override 机制
+  main:
+    allow-bean-definition-overriding: true
+  ###### 配置 DataSource 信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/addrook?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    ###### 配置使用 Druid 作为数据库连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    ###### 配置 Druid 数据库连接池信息
+    druid:
+      min-idle: 3
+      max-active: 15
+      initial-size: 5
+      min-evictable-idle-time-millis: 30000
+      max-evictable-idle-time-millis: 60000
+      ####配置druid数据连接池监控系统
+      web-stat-filter:
+        ####开启Druid数据连接池监控系统
+        enabled: true
+        ####配置监控系统所需监控的url请求路径格式
+        url-pattern: /*
+        ####配置对于一些静态资源不需要进行监控
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.png,*.css,*.ico
+      ####配置Druid监控系统的网页信息
+      stat-view-servlet:
+        ####开启监控系统网页
+        enabled: true
+        ####配置监控系统登录url
+        url-pattern: /druid/*
+        ####配置登录监控系统的用户名和密码
+        login-username: druid
+        login-password: 123456
+        ####禁止监控系统重置系统数据
+        reset-enable: false
+
+
+
+
