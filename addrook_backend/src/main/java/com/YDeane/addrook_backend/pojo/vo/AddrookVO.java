@@ -18,8 +18,10 @@ import java.io.Serializable;
 @ApiModel(value = "个人通讯录——通讯录视图信息")
 public class AddrookVO extends BaseVO implements Serializable {
 	private static final long serialVersionUID = -4688547086657899673L;
-	@ApiModelProperty(value = "")
+	@ApiModelProperty(value = "主键id")
 	private Long id ;        //主键id
+	@ApiModelProperty(value = "序号")
+	private Long no ;        //序号
 	@NotNull(message = "未填写姓名")
 	@ApiModelProperty(value = "用户姓名")
 	private String name;     //用户姓名
@@ -30,6 +32,13 @@ public class AddrookVO extends BaseVO implements Serializable {
 	@ApiModelProperty(value = "家庭住址")
 	private String address;  //家庭住址
 
+	public Long getNo() {
+		return no;
+	}
+
+	public void setNo(Long no) {
+		this.no = no;
+	}
 	public Long getId() {
 		return id;
 	}

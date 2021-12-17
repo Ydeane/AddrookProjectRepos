@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Repository;
 
 /**
- * <b></b>
+ * <b>个人通讯录——数据访问持久层</b>
  *
  * @author
  * @date
@@ -14,4 +14,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository("addrookDao")
 public interface AddrookDao extends BaseMapper<Addrook> {
+
 }
